@@ -26,8 +26,8 @@ use core_privacy\local\request\userlist;
  * Privacy provider implementation for OpenRouter provider
  *
  * @package    aiprovider_openrouter
- * @copyright  2025 e-Learning Team, Universiti Malaysia Terengganu <el@umt.edu.my>
- * @copyright  2024 Matt Porritt <matt.porritt@moodle.com>
+* @copyright  2025 e-Learning Team, Universiti Malaysia Terengganu <el@umt.edu.my>
+* @copyright based on work by 2024 Matt Porritt <matt.porritt@moodle.com> aiprovider_openai
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @codeCoverageIgnore
  */
