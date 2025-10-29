@@ -2,7 +2,6 @@
 
 This plugin integrates the [OpenRouter](https://openrouter.ai/) API with Moodle's Core AI framework, enabling text generation, text summarisation, and image generation actions from Moodle placements.
 
-> **Note**: According to [Moodle plugin naming conventions](https://moodledev.io/general/community/plugincontribution/checklist#code-repository-name), this repository should ideally be named `moodle-aiprovider_openrouter` to follow the pattern `moodle-{plugintype}_{pluginname}`. While not a strict requirement, this helps provide a consistent experience for Moodle developers.
 
 ## Copyright Notice
 
