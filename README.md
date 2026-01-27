@@ -10,14 +10,14 @@ This plugin integrates the [OpenRouter](https://openrouter.ai/) API with Moodle'
 - Unit tests covering provider authentication, request construction, rate-limiting, and response handling pathways.
 
 ## Requirements
-- Moodle 4.5 (build 2024100100) or later.
+- Moodle 5.0 (build 2025041400) or later.
 - An active OpenRouter account with a valid API key.
 
 ## Installation
 1. Copy the `openrouter` directory into `moodle/ai/provider/`.
 2. Visit `Site administration → Notifications` to trigger the plugin installation and database upgrade.
 
-## Configuration
+## Configurationac
 Navigate to `Site administration → Plugins → AI → OpenRouter API provider` and configure:
 
 - **OpenRouter API key** – create a key in your OpenRouter account and paste it here.
@@ -39,4 +39,3 @@ vendor/bin/phpunit ai/provider/openrouter/tests
 
 ## Support
 For questions specific to this Moodle integration, contact the e-Learning Team at Universiti Malaysia Terengganu: `el@umt.edu.my`.
-

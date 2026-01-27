@@ -40,5 +40,9 @@ function xmldb_aiprovider_openrouter_upgrade(int $oldversion): bool {
         upgrade_plugin_savepoint(true, 2024100701, 'aiprovider', 'openrouter');
     }
 
+    if ($oldversion < 2025041400) {
+        upgrade_plugin_savepoint(true, 2025041400, 'aiprovider', 'openrouter');
+    }
+
     return true;
 }
