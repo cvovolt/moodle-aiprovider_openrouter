@@ -41,12 +41,14 @@ class process_generate_image extends abstract_processor {
 
     #[\Override]
     protected function get_endpoint(): UriInterface {
-        return new Uri(get_config('aiprovider_openrouter', 'action_generate_image_endpoint'));
+        $settings = $this->provider->actionconfig[$this->action::class]['settings'] ?? [];
+        return new Uri($settings['endpoint'] ?? 'https://openrouter.ai/api/v1/images/generations');
     }
 
     #[\Override]
     protected function get_model(): string {
-        return get_config('aiprovider_openrouter', 'action_generate_image_model');
+        $settings = $this->provider->actionconfig[$this->action::class]['settings'] ?? [];
+        return $settings['model'] ?? 'openai/dall-e-3';
     }
 
     #[\Override]

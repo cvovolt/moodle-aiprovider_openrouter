@@ -1,5 +1,5 @@
 <?php
-// This file is part of Moodle - https://moodle.org/
+// This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -12,18 +12,21 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Plugin administration pages are defined here.
+ * Hook listener callbacks for the OpenRouter provider.
  *
- * In Moodle 5.0+ all provider configuration (API key, headers, rate limits,
- * action settings) is stored per-instance via the AI configure page at
- * /ai/configure.php. There are no global plugin-level settings.
- *
- * @package     aiprovider_openrouter
- * @copyright   2025 e-Learning Team, Universiti Malaysia Terengganu <el@umt.edu.my>
- * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    aiprovider_openrouter
+ * @copyright  2025 e-Learning Team, Universiti Malaysia Terengganu <el@umt.edu.my>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
+
+$callbacks = [
+    [
+        'hook' => \core_ai\hook\after_ai_provider_form_hook::class,
+        'callback' => \aiprovider_openrouter\hook_listener::class . '::set_form_definition_for_aiprovider_openrouter',
+    ],
+];

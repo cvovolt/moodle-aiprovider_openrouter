@@ -30,16 +30,19 @@ use Psr\Http\Message\UriInterface;
 class process_summarise_text extends process_generate_text {
     #[\Override]
     protected function get_endpoint(): UriInterface {
-        return new Uri(get_config('aiprovider_openrouter', 'action_summarise_text_endpoint'));
+        $settings = $this->provider->actionconfig[$this->action::class]['settings'] ?? [];
+        return new Uri($settings['endpoint'] ?? 'https://openrouter.ai/api/v1/chat/completions');
     }
 
     #[\Override]
     protected function get_model(): string {
-        return get_config('aiprovider_openrouter', 'action_summarise_text_model');
+        $settings = $this->provider->actionconfig[$this->action::class]['settings'] ?? [];
+        return $settings['model'] ?? 'openrouter/auto';
     }
 
     #[\Override]
     protected function get_system_instruction(): string {
-        return get_config('aiprovider_openrouter', 'action_summarise_text_systeminstruction');
+        $settings = $this->provider->actionconfig[$this->action::class]['settings'] ?? [];
+        return $settings['systeminstruction'] ?? $this->action::get_system_instruction();
     }
 }
